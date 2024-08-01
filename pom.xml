@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>books-authors</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>authors</module>
+        <module>books</module>
+        <module>web</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.helidon</groupId>
+                <artifactId>helidon-bom</artifactId>
+                <version>4.0.11</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- JAX-RS -->
+            <dependency>
+                <groupId>jakarta.ws.rs</groupId>
+                <artifactId>jakarta.ws.rs-api</artifactId>
+            </dependency>
+            <!-- CDI -->
+            <dependency>
+                <groupId>jakarta.enterprise</groupId>
+                <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            </dependency>
+            <!-- JSON-B -->
+            <dependency>
+                <groupId>jakarta.json.bind</groupId>
+                <artifactId>jakarta.json.bind-api</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.4.0</version>
+            </dependency>
+            <dependency>
+                <groupId>io.helidon.microprofile.cdi</groupId>
+                <artifactId>helidon-microprofile-cdi</artifactId>
+                <version>4.0.11</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>3.1.0</version> <!-- o la última versión disponible -->
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+
+</project>

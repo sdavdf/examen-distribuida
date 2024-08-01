@@ -1,0 +1,37 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: books-authors
+  labels:
+    app: books-authors
+spec:
+  type: ClusterIP
+  selector:
+    app: books-authors
+  ports:
+    - name: tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: books-authors
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: books-authors
+  template:
+    metadata:
+      labels:
+        app: books-authors
+        version: v1
+    spec:
+      containers:
+      - name: books-authors
+        image: books-authors
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
